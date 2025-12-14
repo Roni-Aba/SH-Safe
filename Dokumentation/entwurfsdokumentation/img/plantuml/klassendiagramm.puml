@@ -1,0 +1,63 @@
+@startuml Klassendiagramm
+skinparam classAttributeIconSize 0
+left to right direction
+skinparam ranksep 150
+skinparam nodesep 60
+' ====== Enum ======
+enum GPSSource <<enumeration>> {
+  LOCATION
+  MANUAL
+}
+
+' ====== UI / Control ======
+class "HauptScreen (Flutter UI)" as HauptScreen <<boundary>> {
+  + Button: "Melde Hotspot"
+}
+
+class GpsController <<control>> {
+  + meldeButtonAktiv(): void
+}
+
+' ====== Sources ======
+interface GPSQUELLE <<interface>> {
+  + getGps(): Future<GPS>
+}
+
+class "GPS Lokalisierer Plugin\n(z.B. geolocator & Google Maps)" as GPSLocator <<component>> {
+  implements GPSQUELLE
+}
+
+class "Manuelle GPS Eingabe" as ManualInput <<component>> {
+  implements GPSQUELLE
+}
+
+' ====== Model ======
+class "GPS (Model)" as GPS <<entity>> {
+  + time: DateTime
+  + lat: double
+  + lon: double
+  + source: GPSSource
+}
+
+' ====== Backend / DB ======
+class "GPSService" as ApiService <<component>> {
+  + sendGps(gps: GPS): void
+}
+
+class "MySQL Datenbank" as MySQL <<database>> {
+  Tabelle: gps
+  Spalten: Zeit, breite, laenge, quelle
+}
+
+' ====== Beziehungen ======
+HauptScreen ..> GpsController : klickt Button
+GpsController ..> ApiService : sendet
+ApiService ..> MySQL : schreibt
+MySQL "verwendet" -- GPS
+
+GpsController ..> GPSQUELLE : holt GPS von
+GPSLocator ..|> GPSQUELLE : realisiert
+ManualInput ..|> GPSQUELLE : realisiert
+GPSQUELLE ..> GPS : liefert
+
+@enduml
