@@ -1,0 +1,32 @@
+\begin{figure}[h]
+    \centering
+\includegraphics[width=1\textwidth,height=1.5\textheight,keepaspectratio]{img/Klassendiagramm.jpg}
+    \caption{Klassendiagramm}
+    \label{fig:Klassendiagramm}
+\end{figure}
+
+\begin{table}[h]
+	\centering
+	\begin{tabularx}{\textwidth}{X X}
+		\rowcolor[HTML]{C0C0C0} 
+		\textbf{Name} & \textbf{Aufgabe} \\
+		(Package) Model & Enthält Klassen mit Grundstruktur verwendeter Daten. \\
+		\rowcolor[HTML]{E7E7E7} 
+		(Package) Repository & Stellt verschiedene Datenbanken zum Speichern und Abrufen einzelner Daten zur Verfügung. \\
+		LIDOParser & Ein Service, welcher gespeicherte APIs durchgeht, Lido-Dateien abruft, in Werk-Objekte überführt und persistent speichert. \\
+		\rowcolor[HTML]{E7E7E7} 
+		PDF-Export & Ein Service, welcher zu einem übergebenen Werk eine PDF-Datei erstellt \\
+		HomeController & Übernimmt die Aufgabe, die Interaktionen des Anwenders mit der Hauptseite zu verarbeiten. Z.B. das Wählen einer Motivgruppe. \\
+		\rowcolor[HTML]{E7E7E7} 
+		MotivgruppenController & Übernimmt die Aufgabe, die Interaktionen des Anwenders mit der Motivgruppenseite zu verarbeiten. Z.B. das Wählen einer Referenzbildes. \\
+		MotivController & Übernimmt die Aufgabe, die Interaktionen des Anwenders mit der Werkseite zu verarbeiten. Z.B. das Erstellen einer PDF-Datei zu einem Werk. \\
+        \rowcolor[HTML]{E7E7E7} 
+        AdminController & Übernimmt die Aufgabe, die Interaktionen des Admins mit der Adminseite zu verarbeiten. Z.B. Interaktionen mit Anwenderdatenbank oder aktualisieren der Werkdatenbank. \\
+        UserController & Übernimmt die Aufgabe, die Interaktionen des Nutzers mit der Nutzerseite zu verarbeiten. Z.B. Senden von Anfragen. \\
+        \rowcolor[HTML]{E7E7E7} 
+        AuthController & Übernimmt Anfragen zum Registrieren oder Einloggen des Anwenders.
+	\end{tabularx}
+	\caption{Klassenbeschreibung}
+	\label{table:klassenbeschreibung}
+\end{table}
+

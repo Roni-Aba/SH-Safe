@@ -1,0 +1,31 @@
+\begin{itemize}
+    \item Die Ansicht des Werkverzeichnisses ist offen und kann für Gäste der Seite auch ohne Log-In stattfinden. 
+          Die Komponente \textit{Werkverzeichnisansicht} ermöglicht es, Motivgruppen und Motive zu wählen 
+          sowie zwischen den zugehörigen Werken zu wechseln. Dazu kommen die Filter-, Sortier- und Suchfunktionen 
+          des Werkverzeichnisses. Neben der standardmäßigen Galerieansicht kann auch zu einer Listenansicht 
+          gewechselt werden.
+    \item Es können auch PDF-Steckbriefe zu den Werken exportiert werden. Diese Funktionalitäten stecken in 
+          der Komponente \textit{PDF-Export}.
+    \item Für die Anmeldung als Nutzer sowie als Admin gibt es eine \textit{Authentifizierungskomponente}, 
+          die Zugriff auf weitere Komponenten gewährt. Sie übernimmt auch die Registrierung von neuen Nutzern 
+          und enthält von Spring bereitgestellte Funktionalitäten für die Nutzerverwaltung und Sicherheitskonfiguration.
+    \item Ist der Nutzer angemeldet, hat er Zugriff auf die \textit{Benutzerbereich-Verwaltungskomponente}. 
+          Diese ermöglicht es ihm, seine Suchanfragen sowie seine Notizen zu den Werken zu speichern und zu verwalten.
+    \item Die \textit{Kunstwerk-Verwaltungskomponente} fasst Funktionalitäten zusammen, die sowohl dem Nutzer 
+          als auch dem Admin zur Verfügung stehen. Der Nutzer kann Anfragen zum Hinzufügen, Editieren sowie 
+          Löschen eigener Werke stellen. Der Admin kann den Anfragen entweder zustimmen oder diese ablehnen. 
+          Außerdem verwaltet der Admin hier, von welchen Werken die Standorte angezeigt werden dürfen.
+    \item Auf die \textit{Benutzer-Verwaltungskomponente} hat nur der Admin Zugriff. Diese Komponente erlaubt 
+          es ihm, Nutzer zu löschen.
+    \item In der Datenbank werden alle Produktdaten gespeichert. Zugriffe laufen über \textit{Repository-Klassen}, 
+          die das von Spring zur Verfügung gestellte Repository-Interface erweitern.
+    \item Die \textit{Lido-Parser-Komponente} fasst die Funktionalitäten zusammen, die die Werkdaten der 
+          digicult-Datenbank abfragen und so aufbereiten, dass sie in unsere Datenbank überführt werden können.
+\end{itemize}
+\begin{figure}[h]
+    \centering
+\includegraphics[width=1\textwidth,height=1.5\textheight,keepaspectratio]{img/Komponentendiagramm.png}
+    \caption{Komponentendiagramm - A}
+    \label{fig:komponentendiagramm-a}
+\end{figure}
+
