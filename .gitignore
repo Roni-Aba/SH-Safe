@@ -1,1 +1,13 @@
 .DS_Store
+
+# iOS
+ios/Flutter/Debug.xcconfig
+ios/Flutter/Release.xcconfig
+ios/Podfile
+ios/Podfile.lock
+ios/.symlinks/
+ios/Flutter/flutter_export_environment.sh
+
+# macOS
+macos/Podfile
+macos/Podfile.lock
